@@ -9,12 +9,13 @@ import AdminDeshboard from "../componements/Deshboard/AdminDeshboard/AdminDeshbo
 import AddItem from "../componements/Deshboard/AddItem/AddItem";
 import ManageItem from "../componements/Deshboard/ManageItem/ManageItem";
 import Registation from "../componements/User/Registation";
-import Admission from "../componements/Admission/Admission";
+// import Admission from "../componements/Admission/Admission";
 import MyCollege from "../componements/MyCollege/MyCollege";
 import About from "../componements/About/About";
 import ForgotPass from "../componements/User/ForgotPass/ForgotPass";
 import Collages from "../componements/Collages/Collages";
 import Collage from "../componements/Collages/Collage";
+import PrivateRoute from "../providers/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
           
             {
                 path: 'myCollege',
-                element: <MyCollege></MyCollege>
+                element: <PrivateRoute><MyCollege></MyCollege></PrivateRoute>
             },
             {
                 path: 'about',
@@ -49,7 +50,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/collage/:id",
-                element: <Collage></Collage>,
+                element: <PrivateRoute><Collage></Collage></PrivateRoute>,
                 loader: () => fetch('collages.json')
             },
             {

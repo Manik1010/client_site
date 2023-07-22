@@ -1,12 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { LoadCanvasTemplate } from 'react-simple-captcha';
 // import { Helmet } from "react-helmet-async";
 import logo from "../../assets/LoginImg.jpg"
 import useTitle from "../../../hooks/useTitle";
-
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Login = () => {
     useTitle("Login");
+
+    const {signIn} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const handelLogin = event => {
         event.preventDefault();
 
@@ -14,17 +22,26 @@ const Login = () => {
         const pass = frm.pass.value;
         const email = frm.email.value;
 
-        console.log(pass, email)
+        // console.log(pass, email)
 
-        // signIn(email, pass)
-        // .then(result => {
-        //     const user = result.user;
-        //     console.log(user);
-        //     // navigate('/')
-        //     navigate(from, { replace: true });
+        signIn(email, pass)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            Swal.fire({
+                title: `${user.displayName} Login Successful.`,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+            // navigate('/')
+            navigate(from, { replace: true });
 
-        // })
-        // .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
     }
     return (
         <>
@@ -61,7 +78,7 @@ const Login = () => {
                                 </div> */}
 
                                 <div className="form-control mt-6">
-                                    <input disabled={false} className="btn btn-primary" type='submit' value='Login'></input>
+                                    <input disabled={false} className="btn btn-active btn-ghost" type='submit' value='Sing In'></input>
                                 </div>
                             </form>
                             <p className='my-3 text=center'>Create a Accoutn Plz..<Link className='text-orange-500 font-bold' to="/registation">Sing Up</Link></p>
