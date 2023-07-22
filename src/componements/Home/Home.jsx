@@ -2,7 +2,7 @@ import useTitle from "../../../hooks/useTitle";
 import Colleges from "./Colleges/CollegeCards";
 import Banner from "./Banner";
 import Papers from "./Papers/Papers";
-// import Serivces from "./Serivces/Serivces";
+import Gallery from "./Gallery/Gallery";
 
 const Home = () => {
     useTitle("Home")
@@ -11,8 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Colleges></Colleges>
             <Papers></Papers>
-            Home......
-            {/* <Serivces></Serivces> */}
+            <Gallery />
         </div>
     );
 };
