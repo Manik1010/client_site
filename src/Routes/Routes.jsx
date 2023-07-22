@@ -9,12 +9,12 @@ import AdminDeshboard from "../componements/Deshboard/AdminDeshboard/AdminDeshbo
 import AddItem from "../componements/Deshboard/AddItem/AddItem";
 import ManageItem from "../componements/Deshboard/ManageItem/ManageItem";
 import Registation from "../componements/User/Registation";
-import Colleges from "../componements/Colleges/Colleges";
 import Admission from "../componements/Admission/Admission";
 import MyCollege from "../componements/MyCollege/MyCollege";
 import About from "../componements/About/About";
 import ForgotPass from "../componements/User/ForgotPass/ForgotPass";
-
+import Collages from "../componements/Collages/Collages";
+import Collage from "../componements/Collages/Collage";
 
 export const router = createBrowserRouter([
     {
@@ -26,13 +26,11 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'colleges',
-                element: <Colleges></Colleges>
+                path: 'collages',
+                element: <Collages></Collages>,
+                loader: () => fetch('collages.json')
             },
-            {
-                path: 'admission',
-                element: <Admission></Admission>
-            },
+          
             {
                 path: 'myCollege',
                 element: <MyCollege></MyCollege>
@@ -48,6 +46,11 @@ export const router = createBrowserRouter([
             {
                 path: 'blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: "/collage/:id",
+                element: <Collage></Collage>,
+                loader: () => fetch('collages.json')
             },
             {
                 path: 'login',
