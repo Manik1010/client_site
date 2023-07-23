@@ -6,13 +6,13 @@ const Papers = () => {
     const [papers, setPapers] = useState([]);
 
     useEffect(() => {
-        fetch("papers.json")
+        fetch("http://localhost:5000/papers")
             .then(res => res.json())
             .then(result => {
                 setPapers(result);
             })
     }, [])
-    console.log(papers);
+    // console.log(papers);
 
     return (
         <div>
@@ -23,7 +23,7 @@ const Papers = () => {
                     {
                         papers?.map(paper => (
                             <Paper
-                                key={paper.id}
+                                key={paper._id}
                                 paper={paper}
                             ></Paper>
                         ))

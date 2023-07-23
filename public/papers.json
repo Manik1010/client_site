@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "title": "Understanding Machine Learning Algorithms",
       "authors": ["John Smith", "Alice Johnson"],
       "abstract": "This paper explores various machine learning algorithms and their applications.",
@@ -9,7 +8,6 @@
       "year": 2023
     },
     {
-      "id": 2,
       "title": "Advancements in Renewable Energy Technologies",
       "authors": ["Michael Lee", "Emily Brown"],
       "abstract": "This research paper discusses recent advancements in renewable energy technologies.",
@@ -18,7 +16,6 @@
       "year": 2022
     },
     {
-      "id": 3,
       "title": "The Impact of Social Media on Mental Health",
       "authors": ["Sarah Johnson", "Daniel Williams"],
       "abstract": "This study examines the effects of social media usage on mental health.",
@@ -27,7 +24,6 @@
       "year": 2021
     },
     {
-      "id": 4,
       "title": "Urban Planning for Sustainable Cities",
       "authors": ["Jennifer Adams", "David Lee"],
       "abstract": "This paper focuses on urban planning strategies for creating sustainable cities.",
@@ -36,7 +32,6 @@
       "year": 2020
     },
     {
-      "id": 5,
       "title": "Applications of Artificial Intelligence in Healthcare",
       "authors": ["Sophia Clark", "Andrew Smith"],
       "abstract": "This research explores AI applications in healthcare and their potential benefits.",

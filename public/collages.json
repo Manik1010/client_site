@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "name": "Rangpur Medical College",
       "image": "https://rpmc.edu.bd/wp-content/uploads/2021/12/3EW-TH-28-3-e1639200945431.jpg",
       "location": "City X, State Y, Country Z",
@@ -59,7 +58,6 @@
       "details": "ABC University is a prestigious institution known for its academic excellence and state-of-the-art facilities. It offers a wide range of undergraduate and graduate programs to students from around the world. The university prioritizes research and encourages students to engage in various extracurricular activities for personal and professional development."
     },
     {
-      "id": 2,
       "name": "Dhaka College",
       "image": "https://www.newagebd.com/files/records/news/202303/196053_156.jpg",
       "location": "City A, State B, Country C",
@@ -124,7 +122,6 @@
       "details": "XYZ College is a vibrant educational institution dedicated to providing quality education and fostering an inclusive learning environment. It offers a wide range of academic programs and extracurricular activities to nurture students' talents and passions."
     },
     {
-      "id": 3,
       "name": "Narsingdi Govt. College",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYpI-cs3-cOzYAYR8cGt2c9N7euB1BroX5Xw&usqp=CAU",
       "location": "City P, State Q, Country R",
@@ -189,7 +186,6 @@
       "details": "LMN Institute is a renowned educational institution focused on academic excellence and holistic development. It provides a nurturing environment for students to explore their potential and become well-rounded individuals."
     },
     {
-      "id": 4,
       "name": "PQR College",
       "image": "https://example.com/pqr_college.jpg",
       "location": "City S, State T, Country U",
@@ -254,8 +250,7 @@
       "details": "PQR College is committed to providing a comprehensive learning experience and fostering a supportive community. With a strong emphasis on research, innovation, and extracurricular activities, the college prepares students for successful and meaningful careers."
     },
     {
-      "id": 5,
-      "name": "চুয়াডাঙ্গা সরকারি কলেজ",
+      "name": "Chuadanga Govt.College Chuadanga",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJXYpIRJF4togRXjRUUVN2fWJqc1OPwmI6A&usqp=CAU",
       "location": "City V, State W, Country X",
       "admission_dates": {
@@ -319,7 +314,6 @@
       "details": "EFG Academy is an esteemed institution focused on academic excellence and holistic development. It offers a nurturing and intellectually stimulating environment to equip students with the skills and knowledge for a successful future."
     },
     {
-      "id": 6,
       "name": "Dhaka College",
       "image": "https://www.newagebd.com/files/records/news/202303/196053_156.jpg",
       "location": "City Y, State Z, Country A",
@@ -384,7 +378,6 @@
       "details": "LMK College is committed to providing quality education and creating a nurturing environment for students' overall growth. It offers a wide range of academic programs and extracurricular activities to help students excel in their chosen fields."
     },
     {
-      "id": 7,
       "name": "RangpurCollege",
       "image": "https://rpmc.edu.bd/wp-content/uploads/2021/12/3EW-TH-28-3-e1639200945431.jpg",
       "location": "City B, State C, Country D",

@@ -8,7 +8,7 @@ const CollegeCards = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch("collages.json")
+        fetch("http://localhost:5000/collages")
             .then(res => res.json())
             .then(result => {
                 // console.log(result);
@@ -22,7 +22,7 @@ const CollegeCards = () => {
                 {
                     colleges?.map(collage => (
                         <CollegeCard
-                            key={collage.id}
+                            key={collage._id}
                             collage={collage}
                         ></CollegeCard>
                     ))

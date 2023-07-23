@@ -1,12 +1,13 @@
 // import { useEffect, useState } from "react";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaEdit} from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 import Event from "./event";
 import Sport from "./Sport";
+import { useState } from "react";
 
 const Collage = () => {
     const { id } = useParams();
-    console.log("College ID:", id);
+    // console.log("College ID:", id);
 
     const colleges = useLoaderData();
     // console.log(colleges);
@@ -15,6 +16,20 @@ const Collage = () => {
         obj.id == id
     )
     // console.log(college.admission_process.online.description);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [updatedRole, setUpdatedRole] = useState("");
+  
+      const handleEdit = (user) => {
+          // Additional logic if needed
+          setSelectedUser(user);
+          setUpdatedRole(user.role);
+          setIsModalOpen(true);
+      };
+      const handleCloseModal = () => {
+          setIsModalOpen(false);
+      };
 
     return (
         <div>
@@ -34,6 +49,7 @@ const Collage = () => {
                             <button className="btn btn-sm btn-active btn-ghost">Apply Now</button>
                         </p>
                         <p>Description: {college.details}</p>
+                        <button onClick={() => handleEdit()} className="btn btn-ghost bg-red-400  text-white ml-2"><FaEdit></FaEdit></button>
                     </div>
                 </div>
             </div>
