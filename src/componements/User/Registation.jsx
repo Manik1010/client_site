@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-// import Swal from 'sweetalert2'
+import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 // import useTitle from "../../../hooks/useTitle";
 import logo from "../../assets/LoginReg.jpg"
 // import { useContext, useState } from "react";
@@ -21,8 +21,8 @@ const Registation = () => {
 
 
     // const {createUser} = useContext(AuthProvider)
-    const {createUser} = useContext(AuthContext)
-    // const navigate = useNavigate();
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
@@ -32,35 +32,35 @@ const Registation = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
 
-                // updateUserProfile(data.name, data.photoURL)
-                //     .then(() => {
-                //         const saveUser = { name: data.name, email: data.email }
-                //         fetch('https://wwa-server.vercel.app/users', {
-                //             method: 'POST',
-                //             headers: {
-                //                 'content-type': 'application/json'
-                //             },
-                //             body: JSON.stringify(saveUser)
-                //         })
-                //             .then(res => res.json())
-                //             .then(data => {
-                //                 if (data.insertedId) {
-                //                     reset();
-                //                     Swal.fire({
-                //                         position: 'top-end',
-                //                         icon: 'success',
-                //                         title: 'User created successfully.',
-                //                         showConfirmButton: false,
-                //                         timer: 1500
-                //                     });
-                //                     navigate('/login');
-                //                 }
-                //             })
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/login');
+                                }
+                            })
 
 
 
-                //     })
-                //     .catch(error => console.log(error))
+                    })
+                    .catch(error => console.log(error))
             })
     };
 

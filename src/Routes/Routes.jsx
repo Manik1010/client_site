@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             {
                 path: "/collage/:id",
                 element: <PrivateRoute><Collage></Collage></PrivateRoute>,
-                loader: () => fetch('collages.json')
+                loader: () => fetch('http://localhost:5000/papers')
             },
             {
                 path: 'login',
