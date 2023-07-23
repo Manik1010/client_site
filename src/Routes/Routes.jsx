@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'collages',
-                element: <Collages></Collages>,
-                loader: () => fetch('collages.json')
+                element: <PrivateRoute><Collages></Collages></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/collages')
             },
           
             {
@@ -47,9 +47,14 @@ export const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: "/collage/:id",
+                path: "/collage/:_id",
                 element: <PrivateRoute><Collage></Collage></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/papers')
+                loader: () => fetch('http://localhost:5000/collages')
+            },
+            {
+                path: "/collageview/:_id",
+                element: <PrivateRoute><Collage></Collage></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/collageview')
             },
             {
                 path: 'edit',

@@ -1,35 +1,35 @@
 // import { useEffect, useState } from "react";
-import { FaLocationArrow, FaEdit} from "react-icons/fa";
+import { FaLocationArrow, FaEdit } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 import Event from "./event";
 import Sport from "./Sport";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Collage = () => {
-    const { id } = useParams();
-    // console.log("College ID:", id);
+    const { _id } = useParams();
+    // console.log("College ID:", _id);
 
     const colleges = useLoaderData();
     // console.log(colleges);
 
     const college = colleges.find(obj =>
-        obj.id == id
+        obj._id == _id
     )
-    // console.log(college.admission_process.online.description);
+    // console.log(college);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [updatedRole, setUpdatedRole] = useState("");
-  
-      const handleEdit = (user) => {
-          // Additional logic if needed
-          setSelectedUser(user);
-          setUpdatedRole(user.role);
-          setIsModalOpen(true);
-      };
-      const handleCloseModal = () => {
-          setIsModalOpen(false);
-      };
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [selectedUser, setSelectedUser] = useState(null);
+    // const [updatedRole, setUpdatedRole] = useState("");
+
+    //   const handleEdit = (user) => {
+    //       // Additional logic if needed
+    //       setSelectedUser(user);
+    //       setUpdatedRole(user.role);
+    //       setIsModalOpen(true);
+    //   };
+    //   const handleCloseModal = () => {
+    //       setIsModalOpen(false);
+    //   };
 
     return (
         <div>
@@ -49,7 +49,10 @@ const Collage = () => {
                             <button className="btn btn-sm btn-active btn-ghost">Apply Now</button>
                         </p>
                         <p>Description: {college.details}</p>
-                        <button onClick={() => handleEdit()} className="btn btn-ghost bg-red-400  text-white ml-2"><FaEdit></FaEdit></button>
+                        <button
+                            // onClick={() => handleEdit()}
+                            className="btn btn-ghost bg-red-400  text-white ml-2"
+                        ><FaEdit></FaEdit></button>
                     </div>
                 </div>
             </div>
@@ -76,7 +79,7 @@ const Collage = () => {
                         ></Event>
                     ))
                 }
-                
+
             </div>
 
             <div className="mx-auto text-center md:w-4/12 my-8">
@@ -92,7 +95,7 @@ const Collage = () => {
                         ></Sport>
                     ))
                 }
-                
+
             </div>
         </div>
     );

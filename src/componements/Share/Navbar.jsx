@@ -30,13 +30,18 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Demo</a>
+                    <a className="btn btn-ghost normal-case text-xl">Collage</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navOptions}
                     </ul>
                 </div>
+
+                <div className="form-control">
+                    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                </div>
+
                 <div className="navbar-end">
 
                     {

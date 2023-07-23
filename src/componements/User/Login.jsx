@@ -3,10 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { Helmet } from "react-helmet-async";
 import logo from "../../assets/LoginImg.jpg"
 import useTitle from "../../../hooks/useTitle";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
 import SocialLogin from "../Share/SocialLogin/SocialLogin";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import app from "../../firebase/firebase.config";
+
+const auth = getAuth(app);
+
 
 const Login = () => {
     useTitle("Login");
@@ -15,6 +20,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+
+    const emailRef = useRef();
 
     const handelLogin = event => {
         event.preventDefault();
@@ -44,6 +51,22 @@ const Login = () => {
         })
         .catch(error => console.log(error));
     }
+    const handelResetPassword = event =>{
+        // console.log(emailRef.current.value)
+        const email = emailRef.current.value;
+        if(!email){
+            alert('Please provide your email address to reset password!!!')
+            return;
+        }
+        sendPasswordResetEmail(auth, email)
+        .then( () => {
+            alert('Please check your email');
+        })
+        .catch(error =>{
+            console.log(error);
+            // setError(error.message);
+        })
+    }
     return (
         <>
             {/* <Helmet>
@@ -59,7 +82,7 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                    <input type="text" name='email' ref={emailRef} placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -67,7 +90,10 @@ const Login = () => {
                                     </label>
                                     <input type="text" name='pass' placeholder="password" className="input input-bordered" />
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover"><Link to="/forget">Forgot password?</Link></a>
+                                        <a href="#" className="label-text-alt link link-hover">
+                                            <Link onClick={handelResetPassword}>Forgot password?</Link>
+                                            {/* <button onClick={handelResetPassword} className="btn btn-success">reset</button> */}
+                                        </a>
                                     </label>
                                 </div>
 
