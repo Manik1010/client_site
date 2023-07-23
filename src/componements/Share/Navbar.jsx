@@ -16,7 +16,6 @@ const Navbar = () => {
         <li><Link to="/myCollege">My College</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         {/* <li><Link to="/about">About Us</Link></li> */}
-        <li><Link to="/dashboard/adminDashboard">Dashboard</Link></li>
 
     </>
     return (
@@ -42,7 +41,7 @@ const Navbar = () => {
 
                     {
                         user ? <>
-                            <Link to="dashboard/profile"><img className='rounded-circle w-10' title={user.displayName} style={{ height: '40px' }} src={user.photoURL} alt="" /></Link>
+                            <Link to="/profile"><img className='rounded-circle w-10' title={user.displayName} style={{ height: '40px' }} src={user.photoURL} alt="" /></Link>
                             <Link onClick={handelLogout} className="btn">Log Out</Link></>
                             : <><Link to="/login" className="btn">Sing In</Link></>
                     }

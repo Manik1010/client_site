@@ -4,10 +4,6 @@ import Login from "../componements/User/Login";
 // import Registation from "../componements/User/Registation";
 import Main from "../Layout/Main"
 import Blog from "../componements/Blog/Blog";
-import Deshboard from "../Layout/Deshboard";
-import AdminDeshboard from "../componements/Deshboard/AdminDeshboard/AdminDeshboard";
-import AddItem from "../componements/Deshboard/AddItem/AddItem";
-import ManageItem from "../componements/Deshboard/ManageItem/ManageItem";
 import Registation from "../componements/User/Registation";
 // import Admission from "../componements/Admission/Admission";
 import MyCollege from "../componements/MyCollege/MyCollege";
@@ -16,6 +12,8 @@ import ForgotPass from "../componements/User/ForgotPass/ForgotPass";
 import Collages from "../componements/Collages/Collages";
 import Collage from "../componements/Collages/Collage";
 import PrivateRoute from "../providers/PrivateRoute";
+import Profile from "../componements/Deshboard/Profile/Profile";
+import Edit from "../componements/Deshboard/Profile/Edit";
 
 export const router = createBrowserRouter([
     {
@@ -54,6 +52,14 @@ export const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/papers')
             },
             {
+                path: 'edit',
+                element: <Edit></Edit>
+            },
+            {
+                path: 'profile',
+                element: <Profile></Profile>
+            },
+            {
                 path: 'login',
                 element: <Login></Login>
             },
@@ -62,29 +68,5 @@ export const router = createBrowserRouter([
                 element: <Registation></Registation>
             }
         ]
-    },
-    {
-        path: 'dashboard',
-        element: <Deshboard></Deshboard>,
-        children: [
-
-            {
-                path: 'adminDashboard',
-                element: <AdminDeshboard></AdminDeshboard>
-            },
-            {
-                path: 'addItem',
-                element: <AddItem></AddItem>
-            },
-            {
-                path: 'manageItem',
-                element: <ManageItem></ManageItem>
-            },
-            {
-                path: 'allusers',
-                element: <ManageItem></ManageItem>
-            }
-
-        ]
-    },
+    }
 ]);

@@ -6,6 +6,7 @@ import useTitle from "../../../hooks/useTitle";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
+import SocialLogin from "../Share/SocialLogin/SocialLogin";
 
 const Login = () => {
     useTitle("Login");
@@ -82,7 +83,7 @@ const Login = () => {
                                 </div>
                             </form>
                             <p className='my-3 text=center'>Create a Accoutn Plz..<Link className='text-orange-500 font-bold' to="/registation">Sing Up</Link></p>
-                            {/* <SocialLogin></SocialLogin> */}
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                     <div className="w-1/2 mr-12">
