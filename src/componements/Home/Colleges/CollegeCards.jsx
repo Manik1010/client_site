@@ -15,7 +15,7 @@ const CollegeCards = () => {
                 setColleges(result);
             })
     }, [])
-    // console.log(colleges);
+    console.log(colleges);
     return (
         <div>
             <div className="mx-auto text-center md:w-4/12 my-8">

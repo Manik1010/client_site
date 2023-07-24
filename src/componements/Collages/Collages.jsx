@@ -13,6 +13,8 @@ const Collages = () => {
             })
     }, [])
 
+    console.log(colleges)
+
     return (
         <div>
             <div className="mx-auto text-center md:w-4/12">
