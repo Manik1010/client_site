@@ -7,7 +7,8 @@ const Admission = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/collages")
+        // fetch("http://localhost:5000/collages")
+        fetch("https://server-site-sigma.vercel.app/collages")
             .then(res => res.json())
             .then(result => {
                 // console.log(result);
@@ -36,7 +37,7 @@ const Admission = () => {
         // console.log(address, phone, subject, collageId);
         const addmitedCollage = { collageId, candidateName, subject, email, phone, address, }
         // console.log(addmitedCollage);
-        fetch('http://localhost:5000/postAdmission', {
+        fetch('https://server-site-sigma.vercel.app/postAdmission', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +62,10 @@ const Admission = () => {
 
 
         <div className="container mx-auto py-8">
-            <div className="flex items-center justify-center">
+            <div className="mx-auto text-center md:w-4/12 my-8">
+                <h3 className="text-3xl text-yellow-600 border-y-4"> ...Admission is Here... </h3>
+            </div>
+            <div className="flex items-center justify-center mt-12">
                 {/* List of college names */}
                 <ul className="space-y-4">
                     {

@@ -5,7 +5,8 @@ const Collages = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/collages")
+        // fetch("http://localhost:5000/collages")
+        fetch("https://server-site-sigma.vercel.app/collages")
             .then(res => res.json())
             .then(result => {
                 // console.log(result);

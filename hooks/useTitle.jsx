@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
     useEffect( () =>{
         // document.title = title;
-        document.title = `Demo | ${title}`;
+        document.title = `CBW | ${title}`;
     } , [title])
  };
 

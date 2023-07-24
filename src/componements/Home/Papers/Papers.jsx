@@ -6,7 +6,7 @@ const Papers = () => {
     const [papers, setPapers] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/papers")
+        fetch("https://server-site-sigma.vercel.app/papers")
             .then(res => res.json())
             .then(result => {
                 setPapers(result);

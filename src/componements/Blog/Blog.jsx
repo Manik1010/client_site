@@ -1,15 +1,12 @@
 import useTitle from "../../../hooks/useTitle";
-import AutoPlay from "./AutoPlay";
-// import AutoPlayMethods from "./AutoPlayMethods";
-
 const Blog = () => {
     useTitle("Blog")
     return (
         <div>
-            Blog....
+            <div className="">
+                <h1 className="text-center font-bold ">Blog is comming soon ....</h1>
+            </div>
 
-            {/* <AutoPlayMethods></AutoPlayMethods> */}
-            <AutoPlay></AutoPlay>
         </div>
     );
 };

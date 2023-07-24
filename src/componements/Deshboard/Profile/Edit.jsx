@@ -27,7 +27,7 @@ const Edit = () => {
         const updateProfile = {name, email, phone, present, nid, url }
         // console.log(updateProfile);
 
-        fetch(`http://localhost:5000/updateProfile/${users.email}`, {
+        fetch(`https://server-site-sigma.vercel.app/updateProfile/${users.email}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Edit = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`)
+        fetch(`https://server-site-sigma.vercel.app/users?email=${user?.email}`)
             .then(res => res.json())
             .then(result => {
                 setUsers(result);

@@ -13,11 +13,13 @@ import PrivateRoute from "../providers/PrivateRoute";
 import Profile from "../componements/Deshboard/Profile/Profile";
 import Edit from "../componements/Deshboard/Profile/Edit";
 import Admission from "../componements/Admission/Admission";
+import ErrorPage from "../componements/ErrorPage/ErrorPage ";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children:[
             {
                 path: '/',
@@ -26,7 +28,7 @@ export const router = createBrowserRouter([
             {
                 path: 'collages',
                 element: <PrivateRoute><Collages></Collages></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/collages')
+                loader: () => fetch('https://server-site-sigma.vercel.app/collages')
             },
             {
                 path: 'myCollege',
@@ -47,12 +49,13 @@ export const router = createBrowserRouter([
             {
                 path: "/collage/:_id",
                 element: <PrivateRoute><Collage></Collage></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/collages')
+                loader: () => fetch('https://server-site-sigma.vercel.app/collages')
             },
             {
                 path: "/collageview/:_id",
                 element: <PrivateRoute><Collage></Collage></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/collageview')
+                // loader: () => fetch('http://localhost:5000/collageview')
+                loader: () => fetch('https://server-site-sigma.vercel.app/collageview')
             },
             {
                 path: 'edit',

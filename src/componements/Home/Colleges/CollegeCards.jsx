@@ -8,7 +8,8 @@ const CollegeCards = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/collageview")
+        // fetch("http://localhost:5000/collageview")
+        fetch("https://server-site-sigma.vercel.app/collageview")
             .then(res => res.json())
             .then(result => {
                 // console.log(result);

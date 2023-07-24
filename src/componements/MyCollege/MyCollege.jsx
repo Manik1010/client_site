@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const MyCollege = () => {
     const { user } = useContext(AuthContext)
@@ -8,7 +8,7 @@ const MyCollege = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/admissions?email=${user?.email}`)
+        fetch(`https://server-site-sigma.vercel.app/admissions?email=${user?.email}`)
             .then(res => res.json())
             .then(result => {
                 // console.log(result);
@@ -19,7 +19,7 @@ const MyCollege = () => {
     // console.log(admissions.collageId)
 
     useEffect(() => {
-        fetch("http://localhost:5000/collages")
+        fetch("https://server-site-sigma.vercel.app/collages")
             .then(res => res.json())
             .then(result => {
                 // console.log(result);
@@ -34,8 +34,8 @@ const MyCollege = () => {
 
     return (
         <>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
+            <div className="hero min-h-screen bg-base-200" >
+                <div className="hero-content flex-col lg:flex-row" style={{ marginTop: '-160px' }}>
                     <img src={collage?.image} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-2xl font-bold">{collage?.name}</h1>
@@ -49,7 +49,13 @@ const MyCollege = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div
+                style={{ marginTop: '-190px' }}
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+
+            >
                 <h1 className="text-2xl font-bold text-center">Personal Information</h1>
                 <p> <span className="font-semibold text-center">Candidate Name: </span>  {admissions?.candidateName}</p>
                 <p> <span className="font-semibold text-center">Candidate Email: </span>  {admissions?.email}</p>
